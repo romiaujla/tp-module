@@ -7,6 +7,9 @@ import {
   FormControlLabel,
   Link,
   FormControl,
+  Grid,
+  Typography,
+  Avatar,
 } from "@mui/material";
 
 const handleSubmit = () => {
@@ -23,6 +26,10 @@ function App() {
           marginTop="8"
           alignItems="center"
         >
+          <Avatar></Avatar>
+          <Grid xs>
+            <Typography>Login</Typography>
+          </Grid>
           <FormControl fullWidth>
             <TextField
               label="Email Address"
