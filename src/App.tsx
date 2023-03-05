@@ -11,6 +11,7 @@ import {
   Typography,
   Avatar,
 } from "@mui/material";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
 const handleSubmit = () => {
   console.log("route to the dashboard page");
@@ -26,7 +27,15 @@ function App() {
           marginTop="8"
           alignItems="center"
         >
-          <Avatar></Avatar>
+          <Avatar
+            sx={{
+              margin: "1px",
+              // @todo - update the color based on the ThemeProvider once setup
+              backgroundColor: "#1976d2",
+            }}
+          >
+            <LockOutlinedIcon />
+          </Avatar>
           <Grid xs>
             <Typography>Login</Typography>
           </Grid>
