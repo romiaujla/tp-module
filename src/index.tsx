@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { AppComponent } from "./AppComponent";
+import { AppComponent } from "./components/AppComponent/AppComponent";
 import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);

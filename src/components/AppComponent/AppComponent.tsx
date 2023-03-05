@@ -12,14 +12,35 @@ import {
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { BaseSyntheticEvent, Component, ReactNode } from "react";
+import { AppComponentStateModel } from "./model/app-component.state.model";
+import FormControlErrorComponent from "../FormControlErrorComponent/FormControlErrorComponent";
 
 export class AppComponent extends Component {
+  constructor(props: AppComponentStateModel) {
+    super(props);
+    this.state = {
+      isValidForm: true,
+      errorMessage: "",
+    };
+  }
+
   handleSubmit = (event: BaseSyntheticEvent): void => {
-    event.stopPropagation();
-    console.log("route to the dashboard page");
+    event.preventDefault();
+    const loginData = new FormData(event.currentTarget);
+    const email: string = loginData.get("email") as string;
+
+    if (email.trim().length === 0) {
+      this.setState({
+        isValidForm: false,
+        errorMessage: "Invalid email",
+      });
+    }
   };
 
   render(): ReactNode {
+    const { isValidForm, errorMessage } = this.state as AppComponentStateModel;
+    console.log(isValidForm, errorMessage);
+
     return (
       <div className="app">
         <Container component="main" maxWidth="xs">
@@ -60,6 +81,12 @@ export class AppComponent extends Component {
                 autoFocus
               ></TextField>
 
+              {!isValidForm && (
+                <FormControlErrorComponent
+                  errorMessage={errorMessage}
+                ></FormControlErrorComponent>
+              )}
+
               <TextField
                 label="Password"
                 margin="normal"
@@ -88,6 +115,7 @@ export class AppComponent extends Component {
                 Login
               </Button>
             </Box>
+
             <Link href="#" variant="body2" alignSelf="flex-end">
               Forgot Password?
             </Link>
