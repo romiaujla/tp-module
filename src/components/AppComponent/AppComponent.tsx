@@ -9,11 +9,11 @@ import {
   Typography,
   Avatar,
   CssBaseline,
+  Alert,
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { BaseSyntheticEvent, Component, ReactNode } from "react";
 import { AppComponentStateModel } from "./model/app-component.state.model";
-import FormControlErrorComponent from "../FormControlErrorComponent/FormControlErrorComponent";
 
 export class AppComponent extends Component {
   constructor(props: AppComponentStateModel) {
@@ -55,7 +55,9 @@ export class AppComponent extends Component {
           >
             <Avatar
               sx={{
-                margin: "1px",
+                // @todo - center component responsively
+                marginTop: "120px",
+                marginBottom: "5px",
                 // @todo - update the color based on the ThemeProvider once setup
                 backgroundColor: "#1976d2",
               }}
@@ -63,7 +65,7 @@ export class AppComponent extends Component {
               <LockOutlinedIcon />
             </Avatar>
 
-            <Typography>Login</Typography>
+            <Typography fontSize="20px">Login</Typography>
 
             <Box
               component="form"
@@ -81,11 +83,7 @@ export class AppComponent extends Component {
                 autoFocus
               ></TextField>
 
-              {!isValidForm && (
-                <FormControlErrorComponent
-                  errorMessage={errorMessage}
-                ></FormControlErrorComponent>
-              )}
+              {!isValidForm && <Alert severity="error">{errorMessage}</Alert>}
 
               <TextField
                 label="Password"
