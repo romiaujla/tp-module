@@ -29,7 +29,7 @@ export default class LoginComponent extends Component<LoginComponentStateModel> 
   handleSubmit = (event: BaseSyntheticEvent): void => {
     event.preventDefault();
     const loginData = new FormData(event.currentTarget);
-    const email: string = loginData.get("email") as string;
+    const email = loginData.get("email") as string;
 
     if (email.trim().length === 0) {
       this.setState({
