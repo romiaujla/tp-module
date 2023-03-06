@@ -14,6 +14,7 @@ import {
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { BaseSyntheticEvent, Component, ReactNode } from "react";
 import { LoginComponentStateModel } from "./model/login-component.state.model";
+import { useNavigate } from "react-router-dom";
 
 export class LoginComponent extends Component<LoginComponentStateModel> {
   constructor(props: LoginComponentStateModel) {
@@ -23,6 +24,8 @@ export class LoginComponent extends Component<LoginComponentStateModel> {
       errorMessage: "",
     };
   }
+
+  navigate = useNavigate();
 
   handleSubmit = (event: BaseSyntheticEvent): void => {
     event.preventDefault();
@@ -34,6 +37,8 @@ export class LoginComponent extends Component<LoginComponentStateModel> {
         isValidForm: false,
         errorMessage: "Invalid email",
       });
+    } else {
+      return this.navigate("/dashboard");
     }
   };
 
@@ -48,7 +53,6 @@ export class LoginComponent extends Component<LoginComponentStateModel> {
   render(): ReactNode {
     const { isValidForm, errorMessage } = this
       .state as LoginComponentStateModel;
-    console.log(isValidForm, errorMessage);
 
     return (
       <div className="app">
