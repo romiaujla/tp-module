@@ -13,10 +13,10 @@ import {
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { BaseSyntheticEvent, Component, ReactNode } from "react";
-import { AppComponentStateModel } from "../../components/AppComponent/model/app-component.state.model";
+import { LoginComponentStateModel } from "./model/login-component.state.model";
 
-export class LoginComponent extends Component {
-  constructor(props: AppComponentStateModel) {
+export class LoginComponent extends Component<LoginComponentStateModel> {
+  constructor(props: LoginComponentStateModel) {
     super(props);
     this.state = {
       isValidForm: true,
@@ -46,7 +46,8 @@ export class LoginComponent extends Component {
   };
 
   render(): ReactNode {
-    const { isValidForm, errorMessage } = this.state as AppComponentStateModel;
+    const { isValidForm, errorMessage } = this
+      .state as LoginComponentStateModel;
     console.log(isValidForm, errorMessage);
 
     return (

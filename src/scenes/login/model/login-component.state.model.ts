@@ -1,4 +1,4 @@
-export interface AppComponentStateModel {
+export interface LoginComponentStateModel {
   isValidForm: boolean;
   errorMessage: string;
 }

@@ -1,20 +1,17 @@
 import { Component, ReactNode } from "react";
+import { LoginComponent } from "../../scenes/Login/LoginComponent";
 import { AppComponentStateModel } from "./model/app-component.state.model";
-import { LoginComponent } from "../../scenes/login/LoginComponent";
 
-export class AppComponent extends Component {
+export class AppComponent extends Component<AppComponentStateModel> {
   constructor(props: AppComponentStateModel) {
     super(props);
     this.state = {};
   }
 
   render(): ReactNode {
-    const { isValidForm, errorMessage } = this.state as AppComponentStateModel;
-    console.log(isValidForm, errorMessage);
-
     return (
       <div className="app">
-        <LoginComponent />
+        <LoginComponent isValidForm={false} errorMessage="" />
       </div>
     );
   }
