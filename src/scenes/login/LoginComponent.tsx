@@ -13,8 +13,8 @@ import {
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { BaseSyntheticEvent, Component, ReactNode } from "react";
-import { LoginComponentStateModel } from "./model/login-component.state.model";
 import { RouterPathEnum } from "../../global/enum/router-path.enum";
+import { LoginComponentStateModel } from "../Login/model/login-component.state.model";
 
 export default class LoginComponent extends Component<LoginComponentStateModel> {
   constructor(props: LoginComponentStateModel) {
