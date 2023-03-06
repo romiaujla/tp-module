@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "strictPropertyInitialization": false,
+        "strict": true,
+        "target": "es6",
+        "lib": [
+            "DOM",
+            "DOM.Iterable",
+            "ESNext"
+        ],
+        "jsx": "react-jsx",
+        "allowSyntheticDefaultImports": true,
+        "noEmit": true,
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "isolatedModules": true,
+        "resolveJsonModule": true,
+        "sourceMap": true,
+        "declaration": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "incremental": true,
+        "noFallthroughCasesInSwitch": true,
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": ["node_modules", "build"]
+}
