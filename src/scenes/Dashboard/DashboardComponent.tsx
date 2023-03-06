@@ -1,7 +1,7 @@
 import { Component, ReactNode } from "react";
 
-export class Dashboard extends Component {
+export class DashboardComponent extends Component {
   render(): ReactNode {
-    return <div>Dashboard</div>;
+    return <div>DashboardComponent</div>;
   }
 }
