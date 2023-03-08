@@ -68,11 +68,9 @@ export default class LoginComponent extends Component<LoginComponentStateModel> 
         >
           <Avatar
             sx={{
-              // @todo - center component responsively
               marginTop: "120px",
               marginBottom: "5px",
-              // @todo - update the color based on the ThemeProvider once setup
-              backgroundColor: "#1976d2",
+              backGroundColor: "primary",
             }}
           >
             <LockOutlinedIcon />
