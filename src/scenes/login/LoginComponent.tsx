@@ -43,9 +43,6 @@ export const LoginComponent = (
     setErrorMessage("");
   };
 
-  console.log("isValidForm", isValidForm);
-  console.log("errorMessage", errorMessage);
-
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
