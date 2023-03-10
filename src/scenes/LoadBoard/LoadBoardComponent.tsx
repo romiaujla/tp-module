@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { ReactElement } from "react";
 
-const DashboardComponent = (): ReactElement => {
+const LoadBoardComponent = (): ReactElement => {
   return (
     <>
       <Box
@@ -10,10 +10,10 @@ const DashboardComponent = (): ReactElement => {
           marginLeft: "220px",
         }}
       >
-        <Typography>Dashboard</Typography>
+        <Typography>LoadBoard</Typography>
       </Box>
     </>
   );
 };
 
-export default DashboardComponent;
+export default LoadBoardComponent;
