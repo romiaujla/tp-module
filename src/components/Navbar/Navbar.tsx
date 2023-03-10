@@ -1,8 +1,5 @@
 import { ReactElement } from "react";
-import {
-  generalNavbarListItems,
-  NavBarListItemsModel,
-} from "./constants/navbarItems";
+import { navbarList, NavBarListItemsModel } from "./constants/navbarItems";
 import { useNavigate } from "react-router-dom";
 import {
   Divider,
@@ -22,6 +19,7 @@ export const Navbar = (): ReactElement => {
   const navigate = useNavigate();
   const theme = useTheme();
 
+  // @ts-ignore
   const handleNavigation = (
     options: Pick<NavBarListItemsModel, "action" | "route">,
   ) => {
@@ -51,28 +49,36 @@ export const Navbar = (): ReactElement => {
       variant="permanent"
       anchor="left"
     >
-      <List subheader={<ListSubheader>General</ListSubheader>}>
-        {generalNavbarListItems.map((item, index) => (
-          <ListItem key={index} disablePadding>
-            <ListItemButton onClick={() => handleNavigation(item)}>
-              <ListItemIcon>{item.icon}</ListItemIcon>
-              <ListItemText primary={item.label} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-
-      <List subheader={<ListSubheader>Account Management</ListSubheader>}>
-        {/* @ts-ignore */}
-        {generalNavbarListItems.map((item, index) => (
-          <ListItem key={index} disablePadding>
-            {/* <ListItemButton onClick={() => navigate(item.route)}>
-              <ListItemIcon>{item.icon}</ListItemIcon>
-              <ListItemText primary={item.label} />
-            </ListItemButton> */}
-          </ListItem>
-        ))}
-      </List>
+      <Divider />
+      {navbarList.map((list, listIndex) => {
+        return (
+          <>
+            <List
+              key={listIndex}
+              subheader={<ListSubheader>{list.subHeader}</ListSubheader>}
+            >
+              {list.listItems.map((listItem, listItemIndex) => {
+                return (
+                  <>
+                    <ListItem key={listItemIndex}>
+                      {listItem.subNav == null ? (
+                        <ListItemButton
+                          onClick={() => handleNavigation(listItem)}
+                        >
+                          <ListItemIcon>{listItem.icon}</ListItemIcon>
+                          <ListItemText>{listItem.label}</ListItemText>
+                        </ListItemButton>
+                      ) : (
+                        <></>
+                      )}
+                    </ListItem>
+                  </>
+                );
+              })}
+            </List>
+          </>
+        );
+      })}
       <Divider />
     </Drawer>
   );

@@ -36,7 +36,7 @@ export const generalNavbarListItems: Array<NavBarListItemsModel> = [
   },
 ];
 
-export const companyManagementListItems: Array<NavBarListItemsModel> = [
+export const accountManagementListItems: Array<NavBarListItemsModel> = [
   {
     id: 4,
     label: "Company Profile",
@@ -88,6 +88,21 @@ export const profileManagementListItems: Array<NavBarListItemsModel> = [
   },
 ];
 
+export const navbarList: Array<NavbarListModel> = [
+  {
+    subHeader: "General",
+    listItems: generalNavbarListItems,
+  },
+  {
+    subHeader: "Account Management",
+    listItems: accountManagementListItems,
+  },
+  {
+    subHeader: "Profile Management",
+    listItems: profileManagementListItems,
+  },
+];
+
 export interface NavBarListItemsModel {
   id: number;
   label: string;
@@ -97,4 +112,9 @@ export interface NavBarListItemsModel {
   action?: {
     logout: boolean;
   };
+}
+
+export interface NavbarListModel {
+  subHeader: string;
+  listItems: Array<NavBarListItemsModel>;
 }
