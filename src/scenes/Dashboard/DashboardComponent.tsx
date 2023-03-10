@@ -1,7 +1,13 @@
-import { Component, ReactNode } from "react";
+import { Typography } from "@mui/material";
+import { Box } from "@mui/system";
+import { ReactElement } from "react";
 
-export class DashboardComponent extends Component {
-  render(): ReactNode {
-    return <div>DashboardComponent</div>;
-  }
-}
+export const DashboardComponent = (): ReactElement => {
+  return (
+    <>
+      <Box>
+        <Typography>Dashboard</Typography>
+      </Box>
+    </>
+  );
+};

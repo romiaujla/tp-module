@@ -1,7 +1,5 @@
-import { Component, ReactNode } from "react";
+import { ReactElement } from "react";
 
-export class SideBarComponent extends Component {
-  render(): ReactNode {
-    return <div>SideBar</div>;
-  }
-}
+export const SideBarComponent = (): ReactElement => {
+  return <div>SideBar</div>;
+};
