@@ -5,9 +5,10 @@ import { App } from "./components/App/App";
 import { RouterPathEnum } from "./global/enum/router-path.enum";
 
 import "./index.css";
-import CalendarComponent from "./scenes/Calendar/CalendarComponent";
-import DashboardComponent from "./scenes/Dashboard/DashboardComponent";
-import LoadBoardComponent from "./scenes/LoadBoard/LoadBoardComponent";
+import BrokersComponent from "./pages/Brokers/BrokersComponent";
+import CalendarComponent from "./pages/Calendar/CalendarComponent";
+import DashboardComponent from "./pages/Dashboard/DashboardComponent";
+import LoadBoardComponent from "./pages/LoadBoard/LoadBoardComponent";
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 
@@ -27,6 +28,10 @@ root.render(
           <Route
             path={RouterPathEnum.LOAD_BOARD_PATH}
             element={<LoadBoardComponent />}
+          />
+          <Route
+            path={RouterPathEnum.BROKERS_PATH}
+            element={<BrokersComponent />}
           />
         </Route>
       </Routes>

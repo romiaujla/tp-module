@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@emotion/react";
 import { ReactElement, useState } from "react";
 import { Outlet } from "react-router-dom";
-import { LoginComponent } from "../../scenes/Login/LoginComponent";
+import { LoginComponent } from "../../pages/Login/LoginComponent";
 import theme from "../../theme";
 import { Navbar } from "../Navbar/Navbar";
 
