@@ -96,6 +96,10 @@ export const Navbar = (): ReactElement => {
                                   <ListItemButton
                                     key={subNavItemIndex}
                                     onClick={() => handleNavigation(subNavItem)}
+                                    sx={{
+                                      marginLeft: "30px",
+                                      borderRadius: "20px",
+                                    }}
                                   >
                                     <ListItemIcon>
                                       {subNavItem.icon}

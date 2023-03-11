@@ -1,10 +1,15 @@
 import {
+  AssignmentIndRounded as AssignmentIndRoundedIcon,
   BarChartRounded as BarChartRoundedIcon,
   CalendarMonthRounded as CalendarMonthRoundedIcon,
-  EmojiTransportationRounded as EmojiTransportationRoundedIcon,
+  CarRepairRounded as CarRepairRoundedIcon,
   HandshakeRounded as HandshakeRoundedIcon,
+  LocalShippingRounded as LocalShippingRoundedIcon,
   LogoutRounded,
   MoveUpRounded as MoveUpRoundedIcon,
+  PeopleRounded as PeopleRoundedIcon,
+  RvHookupRounded as RvHookupRoundedIcon,
+  WarehouseRounded as WarehouseRoundedIcon,
 } from "@mui/icons-material";
 import { ReactElement } from "react";
 import { RouterPathEnum } from "../../../global/enum/router-path.enum";
@@ -40,30 +45,30 @@ export const accountManagementListItems: Array<NavBarListItemsModel> = [
   {
     id: 4,
     label: "Company Profile",
-    icon: <EmojiTransportationRoundedIcon />,
+    icon: <WarehouseRoundedIcon />,
     route: RouterPathEnum.COMPANY_PROFILE_PATH,
   },
   {
     id: 5,
     label: "Employees",
-    icon: <></>,
+    icon: <PeopleRoundedIcon />,
     route: RouterPathEnum.EMPLOYEES_PATH,
   },
   {
     id: 6,
     label: "Equipment",
-    icon: <></>,
+    icon: <CarRepairRoundedIcon />,
     subNav: [
       {
         id: 7,
         label: "Trucks",
-        icon: <></>,
+        icon: <LocalShippingRoundedIcon />,
         route: RouterPathEnum.EQUIPMENT_TRUCKS_PATH,
       },
       {
         id: 8,
         label: "Trailers",
-        icon: <></>,
+        icon: <RvHookupRoundedIcon />,
         route: RouterPathEnum.EQUIPMENT_TRAILERS_PATH,
       },
     ],
@@ -74,7 +79,7 @@ export const profileManagementListItems: Array<NavBarListItemsModel> = [
   {
     id: 9,
     label: "Profile",
-    icon: <></>,
+    icon: <AssignmentIndRoundedIcon />,
     route: RouterPathEnum.PROFILE_PATH,
   },
   {
