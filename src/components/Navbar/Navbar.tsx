@@ -14,9 +14,9 @@ import {
 } from "@mui/material";
 import { RouterPathEnum } from "../../global/enum/router-path.enum";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
+import { styleBreakPoints } from "./constants/styleBreakpoints";
 
 export const Navbar = (): ReactElement => {
-  const drawerWidth = 220;
   const navigate = useNavigate();
   const theme = useTheme();
   const [open, setOpen] = useState(false);
@@ -41,10 +41,10 @@ export const Navbar = (): ReactElement => {
   return (
     <Drawer
       sx={{
-        width: drawerWidth,
+        width: styleBreakPoints.sidebarWidth,
         flexShrink: 0,
         "& .MuiDrawer-paper": {
-          width: drawerWidth,
+          width: styleBreakPoints.sidebarWidth,
           boxSizing: "border-box",
           color: theme.palette.primary.main,
         },
@@ -98,7 +98,6 @@ export const Navbar = (): ReactElement => {
                                     onClick={() => handleNavigation(subNavItem)}
                                     sx={{
                                       marginLeft: "30px",
-                                      borderRadius: "20px",
                                     }}
                                   >
                                     <ListItemIcon>
