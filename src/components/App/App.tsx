@@ -3,7 +3,9 @@ import { ReactElement, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { LoginComponent } from "../../pages/Login/LoginComponent";
 import theme from "../../theme";
-import { Navbar } from "../Navbar/Navbar";
+import { Navbar } from "../../global/component/Navbar/Navbar";
+import { TopBar } from "../../global/component/TopBar/TopBar";
+import { Box } from "@mui/material";
 
 export const App = (props: AppPropsModel): ReactElement => {
   // @ts-ignore
@@ -19,8 +21,11 @@ export const App = (props: AppPropsModel): ReactElement => {
           <LoginComponent isValidForm={true} errorMessage="" />
         ) : (
           <>
-            <Navbar />
-            <Outlet />
+            <Box>
+              <Navbar />
+              <TopBar />
+              <Outlet />
+            </Box>
           </>
         )}
       </div>
