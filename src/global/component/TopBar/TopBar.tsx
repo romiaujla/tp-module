@@ -1,64 +1,44 @@
 import {
-  Drawer,
-  List,
-  ListItemButton,
-  ListItemText,
-  useTheme,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  Tooltip,
 } from "@mui/material";
-import { ReactElement } from "react";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import HistoryIcon from "@mui/icons-material/History";
+import SettingsIcon from "@mui/icons-material/Settings";
 
-export const TopBar = (): ReactElement => {
-  const theme = useTheme();
+export const TopBar = () => {
   return (
-    <>
-      <Drawer
-        sx={{
-          position: "fixed",
-          "& .MuiDrawer-paper": {
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "end",
-            paddingRight: "40px",
-            marginLeft: "220px",
-            boxSizing: "border-box",
-            color: theme.palette.primary.main,
-            height: "50px",
-          },
-          "& .MuiSvgIcon-root": {
-            color: theme.palette.primary.main,
-          },
-        }}
-        variant="permanent"
-        anchor="top"
-      >
-        <List>
-          <ListItemButton
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <ListItemText
-              primary="User Name"
-              sx={{
-                "& .MuiTypography-root": {
-                  fontSize: "14px",
-                  textAlign: "right",
-                },
-              }}
-            ></ListItemText>
-            <ListItemText
-              primary="Role Name"
-              sx={{
-                "& .MuiTypography-root": {
-                  fontSize: "12px",
-                  textAlign: "right",
-                },
-              }}
-            ></ListItemText>
-          </ListItemButton>
-        </List>
-      </Drawer>
-    </>
+    <AppBar position="static">
+      <Toolbar>
+        {/* You can also add a title if needed */}
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          Your App Name
+        </Typography>
+
+        {/* Notifications Icon with Tooltip */}
+        <Tooltip title="Notifications">
+          <IconButton color="inherit">
+            <NotificationsIcon />
+          </IconButton>
+        </Tooltip>
+
+        {/* History Icon with Tooltip */}
+        <Tooltip title="History">
+          <IconButton color="inherit">
+            <HistoryIcon />
+          </IconButton>
+        </Tooltip>
+
+        {/* Settings Icon with Tooltip */}
+        <Tooltip title="Settings">
+          <IconButton color="inherit">
+            <SettingsIcon />
+          </IconButton>
+        </Tooltip>
+      </Toolbar>
+    </AppBar>
   );
 };

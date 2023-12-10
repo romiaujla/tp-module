@@ -1,11 +1,11 @@
-import { ThemeProvider } from "@emotion/react";
-import { ReactElement, useState } from "react";
-import { Outlet } from "react-router-dom";
-import { LoginComponent } from "../../pages/Login/LoginComponent";
-import theme from "../../theme";
-import { Navbar } from "../../global/component/Navbar/Navbar";
-import { TopBar } from "../../global/component/TopBar/TopBar";
 import { Box } from "@mui/material";
+import { LoginComponent } from "../../pages/Login/LoginComponent";
+import { Navbar } from "../../global/component/Navbar/Navbar";
+import { Outlet } from "react-router-dom";
+import { ReactElement, useState } from "react";
+import { ThemeProvider } from "@emotion/react";
+import { TopBar } from "../../global/component/TopBar/TopBar";
+import theme from "../../theme";
 
 export const App = (props: AppPropsModel): ReactElement => {
   // @ts-ignore

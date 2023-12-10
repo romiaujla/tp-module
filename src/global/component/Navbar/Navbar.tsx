@@ -21,7 +21,6 @@ export const Navbar = (): ReactElement => {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
 
-  // @ts-ignore
   const handleNavigation = (
     options: Pick<NavBarListItemsModel, "action" | "route">,
   ) => {
