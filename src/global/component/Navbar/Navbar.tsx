@@ -12,7 +12,7 @@ import {
   ListSubheader,
   useTheme,
 } from "@mui/material";
-import { RouterPathEnum } from "../../global/enum/router-path.enum";
+import { RouterPathEnum } from "../../enum/router-path.enum";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 
 export const Navbar = (): ReactElement => {
@@ -21,7 +21,6 @@ export const Navbar = (): ReactElement => {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
 
-  // @ts-ignore
   const handleNavigation = (
     options: Pick<NavBarListItemsModel, "action" | "route">,
   ) => {
@@ -37,6 +36,8 @@ export const Navbar = (): ReactElement => {
   const toggleSubmenu = () => {
     setOpen(!open);
   };
+
+  console.log(theme);
 
   return (
     <Drawer

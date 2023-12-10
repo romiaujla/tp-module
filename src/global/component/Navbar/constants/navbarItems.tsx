@@ -12,7 +12,7 @@ import {
   WarehouseRounded as WarehouseRoundedIcon,
 } from "@mui/icons-material";
 import { ReactElement } from "react";
-import { RouterPathEnum } from "../../../global/enum/router-path.enum";
+import { RouterPathEnum } from "../../../enum/router-path.enum";
 
 export const generalNavbarListItems: Array<NavBarListItemsModel> = [
   {

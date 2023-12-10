@@ -8,6 +8,7 @@ const BrokersComponent = (): ReactElement => {
       <Box
         sx={{
           marginLeft: "220px",
+          marginTop: "65px",
         }}
       >
         <Typography>Brokers Component</Typography>

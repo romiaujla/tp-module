@@ -1,9 +1,11 @@
-import { ThemeProvider } from "@emotion/react";
-import { ReactElement, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Box } from "@mui/material";
 import { LoginComponent } from "../../pages/Login/LoginComponent";
+import { Navbar } from "../../global/component/Navbar/Navbar";
+import { Outlet } from "react-router-dom";
+import { ReactElement, useState } from "react";
+import { ThemeProvider } from "@emotion/react";
+import { TopBar } from "../../global/component/TopBar/TopBar";
 import theme from "../../theme";
-import { Navbar } from "../Navbar/Navbar";
 
 export const App = (props: AppPropsModel): ReactElement => {
   // @ts-ignore
@@ -19,8 +21,11 @@ export const App = (props: AppPropsModel): ReactElement => {
           <LoginComponent isValidForm={true} errorMessage="" />
         ) : (
           <>
-            <Navbar />
-            <Outlet />
+            <Box>
+              <Navbar />
+              <TopBar />
+              <Outlet />
+            </Box>
           </>
         )}
       </div>
